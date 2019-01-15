@@ -11,7 +11,8 @@ import java.time.ZonedDateTime;
  * @param <ID_STATE> state id type
  * @param <U> User Context type
  */
-public class Event<ID_COMMAND, C extends Command<C>, ID_STATE extends AggregateId, U> {
+@SuppressWarnings("rawtypes")
+public class Event<ID_COMMAND, C extends Command, ID_STATE extends AggregateId, U> {
 
   private final ID_STATE idAggregate;
   private final ID_COMMAND idCommand;

@@ -4,7 +4,7 @@ import java.time.ZonedDateTime;
 
 import reactor.core.publisher.Mono;
 
-public abstract class  EventSourced<ID_STATE extends AggregateId, S extends State<S>, ID_COMMAND, C extends Command<C>, U> {
+public abstract class EventSourced<ID_STATE extends AggregateId, S extends State<S>, ID_COMMAND, C extends Command<C>, U> {
 
   private final Handlers<S, C> handlers;
 
@@ -47,8 +47,8 @@ public abstract class  EventSourced<ID_STATE extends AggregateId, S extends Stat
     final Event<ID_COMMAND, C, ID_STATE, U> event = new Event<>(idState, version, command, ZonedDateTime.now(), user);
     // TODO : handle retry
     return store.save(idState, state, event)
-      //.then(eventPublisher().publish(idState.stringify(), event))
-      .flatMap(m -> store.removeFirstEvent(idState))
+      //.then(eventPublisher.publish(idState.stringify(), event))
+      //.flatMap(m -> store.removeFirstEvent(idState))
       .map(m -> new Aggregate<>(idState, version, state));
   }
 

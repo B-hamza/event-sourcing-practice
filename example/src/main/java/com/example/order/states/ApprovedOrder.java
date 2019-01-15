@@ -14,6 +14,6 @@ public class ApprovedOrder extends Order {
    */
   public String getCustomerId() {
     return customerId;
-  }
+  } 
 
 }

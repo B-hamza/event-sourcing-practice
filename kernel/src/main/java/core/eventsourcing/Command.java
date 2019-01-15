@@ -1,17 +1,16 @@
 package core.eventsourcing;
 
 @SuppressWarnings("rawtypes")
-public class Command<C extends Command> {
-  private final Class<? extends C> commandType;
+public class Command<C extends Command> extends TypeTag<C> {
 
   public Command(Class<? extends C> commandType) {
-    this.commandType = commandType;
+    super(commandType);
   }
 
   /**
    * @return the commandType
    */
   public String getCommandType() {
-    return commandType.getName();
+    return this.getTypeName();
   }
 }

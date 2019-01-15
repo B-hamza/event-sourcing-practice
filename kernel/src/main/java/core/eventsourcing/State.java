@@ -8,18 +8,16 @@ package core.eventsourcing;
  * @param <STATE> state type
  */
 @SuppressWarnings("rawtypes")
-public class State<S extends State> {
-
-  private final Class<? extends S> stateType;
+public class State<S extends State> extends TypeTag<S> {
 
   public State(Class<? extends S> stateType) {
-    this.stateType = stateType;
+    super(stateType);
   }
 
   /**
    * @return the stateType
    */
   public String getStateType() {
-    return stateType.getName();
+    return this.getTypeName();
   }
 }
