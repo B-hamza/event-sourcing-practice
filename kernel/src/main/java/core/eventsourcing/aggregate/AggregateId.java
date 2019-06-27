@@ -1,4 +1,4 @@
-package core.eventsourcing;
+package core.eventsourcing.aggregate;
 
 public interface AggregateId {
   String stringify();

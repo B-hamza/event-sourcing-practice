@@ -2,10 +2,10 @@ package core.infra.mongo;
 
 import reactor.core.publisher.Mono;
 
-import core.eventsourcing.AggregateId;
-import core.eventsourcing.Command;
-import core.eventsourcing.Event;
-import core.eventsourcing.EventStore;
+import core.eventsourcing.aggregate.AggregateId;
+import core.eventsourcing.command.Command;
+import core.eventsourcing.event.Event;
+import core.eventsourcing.store.EventStore;
 public class MongoEventStore<ID_COMMAND, C extends Command<C>, ID_STATE extends AggregateId, U> 
   implements EventStore<ID_COMMAND, C, ID_STATE, U> {
   

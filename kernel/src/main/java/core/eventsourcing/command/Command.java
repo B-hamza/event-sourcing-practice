@@ -1,4 +1,6 @@
-package core.eventsourcing;
+package core.eventsourcing.command;
+
+import core.eventsourcing.TypeTag;
 
 @SuppressWarnings("rawtypes")
 public class Command<C extends Command> extends TypeTag<C> {

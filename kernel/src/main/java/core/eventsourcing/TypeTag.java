@@ -8,17 +8,10 @@ public class TypeTag<C> {
     this.type = type;
   }
 
-
-  /**
-   * @return the type
-   */
   public Class<? extends C> getType() {
     return type;
   }
 
-  /**
-   * @return the type
-   */
   public String getTypeName() {
     return type.getName();
   }

@@ -1,4 +1,6 @@
-package core.eventsourcing;
+package core.eventsourcing.command;
+
+import core.eventsourcing.aggregate.State;
 
 import java.util.function.BiFunction;
 
