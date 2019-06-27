@@ -12,7 +12,7 @@ import com.example.order.states.Order;
 import com.example.order.states.PendingOrder;
 
 public class OrderCommandHandler {
-    
+
   private final Handlers<Order, OrderCommand> handlers;
 
   public OrderCommandHandler() {
@@ -23,6 +23,7 @@ public class OrderCommandHandler {
   }
 
   public PendingOrder createOrder(Order emptyOrder, CreateOrderCommand command) {
+    // rools
     return new PendingOrder(command.getCustomerId());
   }
 

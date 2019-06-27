@@ -5,19 +5,13 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 import java.util.Optional;
 
-import com.mongodb.client.MongoCollection;
-
-import org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory;
-import org.springframework.data.mongodb.core.ReactiveCollectionCallback;
-import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
-
 import core.dao.MongoService;
-import core.eventsourcing.Aggregate;
-import core.eventsourcing.AggregateId;
-import core.eventsourcing.Command;
-import core.eventsourcing.Event;
-import core.eventsourcing.Store;
-import core.eventsourcing.State;
+import core.eventsourcing.aggregate.Aggregate;
+import core.eventsourcing.aggregate.AggregateId;
+import core.eventsourcing.command.Command;
+import core.eventsourcing.event.Event;
+import core.eventsourcing.store.Store;
+import core.eventsourcing.aggregate.State;
 
 public class MongoStore<ID_STATE extends AggregateId, S extends State<S>, ID_COMMAND, C extends Command<C>, U> 
   implements Store<ID_STATE, S, ID_COMMAND, C , U> {
